@@ -49,7 +49,7 @@ class Contact(webapp2.RequestHandler):
 class Meet(webapp2.RequestHandler):
 
     def get(self):
-        path = os.path.join(os.path.dirname(__file__), 'meetestee.html')
+        path = os.path.join(os.path.dirname(__file__), 'meet.html')
         self.response.out.write(template.render(path, ""))
 
 app = webapp2.WSGIApplication([('/', Index ), ( '/contact', Contact), ('/meet', Meet)], debug=True)
