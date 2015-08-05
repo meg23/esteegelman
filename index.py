@@ -35,7 +35,7 @@ class Contact(webapp2.RequestHandler):
 
         message = mail.EmailMessage(sender="estee@esteegelman.appspotmail.com",
                             subject=contact_subject)
-        message.to = "m.gelman08@gmail.com"
+        message.to = "estee@esteegelman.com"
         message.body = contact_message
         message.send()
 
