@@ -35,6 +35,7 @@
                                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                         <ul class="nav navbar-nav">
                                             <li><a href="/meet">Meet Estee</a></li>
+                                            <li><a href="#testimonials">Testimonials</a></li>
                                             <li><a href="/contact">Contact</a></li>
                                         </ul>
                                     </div><!-- /.navbar-collapse -->
@@ -43,14 +44,14 @@
                         </div>  <!-- row -->
                     </header>   <!-- site header -->
 
-                    <h1 class="promo-text">Estee is *the* concierge for interactive technology experiences for people 55+. Her classes are designed to build computer skills one click at time. Find out how she can help you connect to the digital age - painfree. </h1>
+                    <h1 class="promo-text">{{ headline.element_content|safe }}</h1>
                     <div class="CTA text-center">
-                        <a href="http://technextit.com/" class="btn-CTA">Click her to see what others have to say about working with Estee! </a></button>
+                        <a href="#services" class="btn-CTA">Learn about her services</a></button>
                     </div>
                 </div>
             </section>
             
-            <section class="section-2">
+            <section id="services" class="section-2">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-1">
@@ -59,7 +60,7 @@
                             </div>
                         </div>
                         <div class="col-md-11">
-                             <p class="feature">Keeping people connected with friends and family worldwide via customized laptop and tablet classes. Experienced, patient and energetic about teaching everyone from baby boomers to centenarians about today's technologies.</p>
+                             <p class="feature">{{ bullet_blue.element_content|safe }}</p>
                         </div>
                     </div>  <!-- row -->
 
@@ -70,7 +71,7 @@
                             </div>
                         </div>
                         <div class="col-md-11">
-                             <p class="feature"> The customized curriculum teaches people what they **want** to know, while incorporating policies to teach them what they **need** to know. Topics include using email, surfing the web, understanding social media and most importantly - staying safe through it all!  </p>
+                             <p class="feature">{{ bullet_green.element_content|safe }}</p>
                         </div>
                     </div>  <!-- row -->
 
@@ -81,97 +82,31 @@
                             </div>
                         </div>
                         <div class="col-md-11">
-                             <p class="feature feature-last">Small class sizes allows for maxium hands on assistance and seperate classes are designed for individual skill levels.</p>
+                             <p class="feature feature-last">{{ bullet_orange.element_content|safe }}</p>
                         </div>
                     </div>  <!-- row -->
                 </div>
             </section>  <!-- section-2 -->
 
             <section class="section-3">
-                <div class="container">
+                <div id="testimonials" class="container">
                     <div class="row">
                         <div class="col-md-12">
                             <header class="section-header">Testimonials</header>
                             <div class="owl-carousel">
 
-<div class="slider-item">
+                              {% for item in testimonials %}
+                              <div class="slider-item">
                                     <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Doug Hudiburg">
-                                    </figure> <blockquote> The class was wonderful. She was very clear. Also she came around to help personally when we were not understanding where to be for the screen changes.</blockquote>
-                                    <h1 class="client-name"> Sophia S. </h1>
-                                    <span class="client-designation">STUDENT, AGE 76>
-                                </div><div class="slider-item">
-                                    <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Doug Hudiburg">
-                                    </figure> <blockq.Estee did a wonderful job — she was patient, pleasant, and knowledgeable. I learned a great deal. .</blockquote>
-                                    <h1 class="client-name"> Bill P. </h1>
-                                    <span class="client-designation">STUDENT, AGE 62>
-                                </div><div class="slider-item">
-                                    <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Doug Hudiburg">
-                                    </figure> <blockquote> Estee is a very honest, very helpful young woman with a good heart, esecially for eldery people. She likes working with us and has an excellent knowledge of computers. She always answers my questions and finds a method to make sure I understand the answers. I enjoy her classes very much.</blockquote>
-                                    <h1 class="client-name"> Sophia S. </h1>
-                                    <span class="client-designation">STUDENT, AGE 76>
-                                </div><div class="slider-item">
-                                    <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Doug Hudiburg">
-                                    </figure> <blockquote> Estee is a very honest, very helpful young woman with a good heart, esecially for eldery people. She likes working with us and has an excellent knowledge of computers. She always answers my questions and finds a method to make sure I understand the answers. I enjoy her classes very much.</blockquote>
-                                    <h1 class="client-name"> Sophia S. </h1>
-                                    <span class="client-designation">STUDENT, AGE 76>
-                                </div><div class="slider-item">
-                                    <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Doug Hudiburg">
-                                    </figure>
-                                    <blockquote>Estee is a very honest, very helpful young woman with a good heart, esecially for eldery people. She likes working with us and has an excellent knowledge of computers. She always answers my questions and finds a method to make sure I understand the answers. I enjoy her classes very much.</blockquote>
-                                    <h1 class="client-name"> Sophia S. </h1>
-                                    <span class="client-designation">STUDENT, AGE 76>
-                                </div><div class="slider-item">
-                                    <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Doug Hudiburg">
-                                    </figure>
-                                    <blockquote>Estee is an excellent teacher. She is organized and sensitive to the different levels of expertise in the class. Her personality is refreshing and she makes one feel the excitement and possibilites available with new technology.</blockquote>
-                                    <h1 class="client-name">Barbara H. </h1>
-                                    <span class="client-designation">STUDENT, AGE 58>
-                                </div><div class="slider-item">
-                                    <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Doug Hudiburg">
-                                    </figure>
-                                    <blockquote>Estee is a very kind and considerate person, who is wonderful with people my age. She doesn't make people feel silly about thier lack of computer or tablet skills. I have had many people flip out on me for not remembering what we learned previously, until Estee taught me with her kindness and patience.</blockquote>
-                                    <h1 class="client-name"> Kirk R.</h1>
-                                    <span class="client-designation">STUDENT, AGE 76t>
-                                </div><div class="slider-item">
-                                    <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Doug Hudiburg">
-                                    </figure>
-                                    <blockquote>Estee is such a sweet girl! She helps me order my medical supplies and shop online. She is so patient and knowledgebale - such a blessing to me.</blockquote>
-                                    <h1 class="client-name"> Millie G. </h1>
-                                    <span class="client-designation">STUDENT, AGE 93t>
-                                </div>
-                                <div class="slider-item">
-                                    <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Doug Hudiburg">
-                                    </figure>
-                                    <blockquote>Estee is very enthusiastic and patient about what she does. She takes the time to answer my questions, no matter how basic. She is a joy to learn from.</blockquote>
-                                    <h1 class="client-name"> Sam H. </h1>
-                                    <span class="client-designation">STUDENT, AGE 80>
-                                </div>
-                                <div class="slider-item">
-                                    <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Dwaynne Villiers">
-                                    </figure>
-                                    <blockquote> Just a superb instructor who skillfully worked with a group of people at different knowledge levels.</blockquote>
-                                    <h1 class="client-name">Carol Y.</h1>
-                                    <span class="client-designation">STUDENT, AGE 73</span>
-                                </div>
-                                <div class="slider-item">
-                                    <figure class="testimonial-img">
-                                        <img src="https://www.digitalocean.com/assets/images/jeff_atwood-2f189304.jpg" alt="Nathan Devine">
-                                    </figure>
-                                    <blockquote> She is extremely well-organized, knowledgeable, patient and interacts very well with everyone.</blockquote>
-                                    <h1 class="client-name"> Jack K. </h1>
-                                    <span class="client-designation">STUDENT, AGE 88</span>
-                                </div>
+                                    </figure> <blockquote>{{ item.element_content }}</blockquote>
+                                    <h1 class="client-name">{{ item.testimonial_name }}</h1>
+                                    <span class="client-designation">{{ item.testimonial_designation}} </span>
+                                </div> 
+                               {% endfor %}
                             </div>
+                           <div class="CTA2 text-center">
+                               <a href="/testimonials" class="btn-CTA">See more testimonials</a></button>
+                           </div>
                         </div>
                     </div>
                 </div>
@@ -181,6 +116,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
+
                             
                         </div>
                     </div>

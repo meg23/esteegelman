@@ -82,6 +82,11 @@ a, a:active, a:focus, a:hover {outline: none;}
 margin-bottom: 100px;
 }
 
+.CTA2 {
+        margin-bottom: 50px;
+        padding-top: 25px;
+}
+
 .btn-CTA {
 	display: inline-block;
 	padding: 10px 11px;
@@ -95,6 +100,21 @@ margin-bottom: 100px;
 	font-size: 14px;
 	width: 208px;
 	transition: all 0.2s ease-in-out;
+}
+
+.btn-CTA2 {
+        padding-top: 25px;
+        display: inline-block;
+        border: 1px solid #ffffff;
+        border-radius: 3px;
+        background: transparent;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 400;
+        font-size: 14px;
+        width: 208px;
+        transition: all 0.2s ease-in-out;
 }
 
 .btn-CTA:hover {
@@ -177,6 +197,16 @@ margin-bottom: 40px;
 	padding: 0;
 }
 
+.bio-item blockquote {
+	color: #FFFFFF;
+	font-size: 25px;
+	line-height: 1.4;
+	margin-bottom: 40px;
+	border: 0;
+	padding: 0;
+        text-align: left;
+}
+
 .client-name {
 color: #FFFFFF;
 font-weight: 700;
@@ -241,6 +271,15 @@ transition: all 0.2s ease-in-out;
     font-size: 24px; 
     line-height: 1.5; 
     margin-bottom: 100px;
+}
+
+.main-sub-header2 {
+    text-align: left;
+    font-weight: 100;
+    font-size: 24px;
+    margin-bottom: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
 .team-member {
@@ -320,3 +359,4 @@ label span {
 	letter-spacing: 2px;
 	font-size: 13px;
 }
+

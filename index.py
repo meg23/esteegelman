@@ -5,24 +5,56 @@ import logging
 import json
 import os
 
+from google.appengine.ext import db
 from google.appengine.api import users
 from google.appengine.api import mail
 from google.appengine.ext.webapp import template
 
 log = logging.getLogger('webapp')
 
-class Index(webapp2.RequestHandler):
+class SiteData(db.Model):
 
+    element_name = db.StringProperty()
+    element_content = db.StringProperty(multiline=True)
+    element_order = db.IntegerProperty()
+    testimonial_name = db.StringProperty()
+    testimonial_designation = db.StringProperty()
+    testimonial_image_url = db.StringProperty()
+
+class Content(object):
+
+    def get_single_content(self, element_name):
+        element = db.GqlQuery("select * from SiteData where element_name = :1", element_name).get()
+        return element
+
+    def get_batch_content(self, element_name):
+        elements = db.GqlQuery("select * from SiteData where element_name = :1 order by element_order", element_name)
+        return elements
+
+class Index(webapp2.RequestHandler):
+    
     def get(self):
+        
+        content = Content() 
+
+        template_values = {
+            'headline': content.get_single_content('headline'),
+            'headline_button': content.get_single_content('headline_button'),
+            'bullet_blue': content.get_single_content('bullet_blue'),
+            'bullet_green': content.get_single_content('bullet_green'),
+            'bullet_orange': content.get_single_content('bullet_orange'),
+            'testimonials': content.get_batch_content('testimonial_front')
+        }
+
         path = os.path.join(os.path.dirname(__file__), 'index.html')
-        self.response.out.write(template.render(path, ""))
+        self.response.out.write(template.render(path, template_values))
 
 class Contact(webapp2.RequestHandler):
 
     def get(self):
         template_values = {
             'header_title': "Contact",
-            'header_body': "Learn about Estee and what she loves to do"
+            'header_body': "Find out more information about Estee's programs"
         }
         path = os.path.join(os.path.dirname(__file__), 'contact.html')
         self.response.out.write(template.render(path, template_values))
@@ -49,9 +81,28 @@ class Contact(webapp2.RequestHandler):
 class Meet(webapp2.RequestHandler):
 
     def get(self):
-        path = os.path.join(os.path.dirname(__file__), 'meet.html')
-        self.response.out.write(template.render(path, ""))
 
-app = webapp2.WSGIApplication([('/', Index ), ( '/contact', Contact), ('/meet', Meet)], debug=True)
+        content = Content() 
+
+        template_values = {
+            'bio': content.get_single_content('bio')
+        }
+
+        path = os.path.join(os.path.dirname(__file__), 'meet.html')
+        self.response.out.write(template.render(path, template_values ))
+
+class Testimonials(webapp2.RequestHandler):
+
+    def get(self):
+
+        content = Content()
+
+        template_values = {
+            'testimonials': content.get_batch_content('testimonial')
+        }
+        path = os.path.join(os.path.dirname(__file__), 'testimonials.html')
+        self.response.out.write(template.render(path, template_values ))
+
+app = webapp2.WSGIApplication([('/', Index ), ( '/contact', Contact), ('/meet', Meet), ('/testimonials', Testimonials) ], debug=True)
 
 
