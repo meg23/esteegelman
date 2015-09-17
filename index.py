@@ -53,8 +53,8 @@ class Contact(webapp2.RequestHandler):
 
     def get(self):
         template_values = {
-            'header_title': "Contact",
-            'header_body': "Find out more information about Estee's programs"
+            'header_title': "Contact Estee",
+            'header_body': "Her goal is to simplify difficult technologies in order to make them accessible to everyone. Discover how easy and enjoyable it can be to connect online, with a little help from Estee."
         }
         path = os.path.join(os.path.dirname(__file__), 'contact.html')
         self.response.out.write(template.render(path, template_values))
