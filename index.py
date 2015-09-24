@@ -15,6 +15,7 @@ log = logging.getLogger('webapp')
 class SiteData(db.Model):
 
     element_name = db.StringProperty()
+    element_title = db.StringProperty()
     element_content = db.StringProperty(multiline=True)
     element_order = db.IntegerProperty()
     testimonial_name = db.StringProperty()
@@ -34,15 +35,15 @@ class Content(object):
 class Index(webapp2.RequestHandler):
     
     def get(self):
-        
+       
         content = Content() 
 
         template_values = {
             'headline': content.get_single_content('headline'),
             'headline_button': content.get_single_content('headline_button'),
-            'bullet_blue': content.get_single_content('bullet_blue'),
-            'bullet_green': content.get_single_content('bullet_green'),
-            'bullet_orange': content.get_single_content('bullet_orange'),
+            'bullet_blue': content.get_single_content('bullet_one'),
+            'bullet_green': content.get_single_content('bullet_two'),
+            'bullet_orange': content.get_single_content('bullet_three'),
             'testimonials': content.get_batch_content('testimonial_front')
         }
 
